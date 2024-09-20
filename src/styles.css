@@ -1,0 +1,152 @@
+@font-face {
+    font-family: 'Digital-7';
+    src: URL('./assets/digital-7.regular.ttf') format('truetype');
+  }
+  
+  /* Global Styles */
+  * {
+    box-sizing: border-box;
+    font-family: Inconsolata, system-ui;
+    font-size: 20px;
+  }
+  
+  :root {
+    --background: #c2c2d6;
+    --calcContainer: #000000;
+    --num: #4d4d4d;
+    --operator: #666666;
+    --clear: #ac3939;
+    --equals: #004466;
+  }
+  
+  body {
+    background-color: var(--background);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Calculator Container */
+  .calc--container {
+    background-color: var(--calcContainer);
+    padding: 8px;
+    width: 300px;
+    height: 400px;
+  }
+  
+  /* Display Section */
+  .calc--display {
+    width: 100%;
+    height: 15%;
+  }
+  
+  .calc--display--input,
+  .calc--display--result {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    cursor: default;
+    width: 100%;
+    font-family: Digital-7, system-ui;
+    text-align: right;
+  }
+  
+  .calc--display--input {
+    color: orange;
+    height: 50%;
+    font-size: 18px;
+  }
+  
+  .calc--display--result {
+    color: white;
+    height: 50%;
+    font-size: 30px;
+  }
+  
+  /* Buttons Grid */
+  .calc--buttons {
+    width: 100%;
+    height: 83%;
+    margin-top: 3%;
+    display: grid;
+    color: white;
+    text-align: center;
+    grid-template-areas:
+      "clear clear divide multiply"
+      "seven eight nine subtract"
+      "four five six add"
+      "one two three equals"
+      "zero zero decimal equals";
+  }
+  
+  /* Common Button Styles */
+  .calc--buttons div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid black;
+  }
+  
+  .calc--buttons div:hover {
+    border: 1px solid gray;
+  }
+  
+  .calc--buttons div:active {
+    border: 1px solid transparent;
+    box-shadow: inset 5px 5px 10px -3px #000000b3;
+  }
+  
+  /* Number Buttons */
+  .calc--buttons--one,
+  .calc--buttons--two,
+  .calc--buttons--three,
+  .calc--buttons--four,
+  .calc--buttons--five,
+  .calc--buttons--six,
+  .calc--buttons--seven,
+  .calc--buttons--eight,
+  .calc--buttons--nine,
+  .calc--buttons--zero,
+  .calc--buttons--decimal {
+    background-color: var(--num);
+  }
+  
+  .calc--buttons--one { grid-area: one; }
+  .calc--buttons--two { grid-area: two; }
+  .calc--buttons--three { grid-area: three; }
+  .calc--buttons--four { grid-area: four; }
+  .calc--buttons--five { grid-area: five; }
+  .calc--buttons--six { grid-area: six; }
+  .calc--buttons--seven { grid-area: seven; }
+  .calc--buttons--eight { grid-area: eight; }
+  .calc--buttons--nine { grid-area: nine; }
+  .calc--buttons--zero { grid-area: zero; }
+  .calc--buttons--decimal { grid-area: decimal; }
+  
+  /* Operator Buttons */
+  .calc--buttons--add,
+  .calc--buttons--subtract,
+  .calc--buttons--multiply,
+  .calc--buttons--divide {
+    background-color: var(--operator);
+  }
+  
+  .calc--buttons--add { grid-area: add; }
+  .calc--buttons--subtract { grid-area: subtract; }
+  .calc--buttons--multiply { grid-area: multiply; }
+  .calc--buttons--divide { grid-area: divide; }
+  
+  /* Special Buttons */
+  .calc--buttons--clear {
+    grid-area: clear;
+    background-color: var(--clear);
+  }
+  
+  .calc--buttons--equals {
+    grid-area: equals;
+    background-color: var(--equals);
+  }
+  
